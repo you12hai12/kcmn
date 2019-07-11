@@ -23,6 +23,7 @@
     "fusioncharts": "^3.13.5-sr.1",
     "highcharts": "^6.0.3",
     "infiot-component-linechart": "0.0.10",
+    "iview": "^3.4.2",
     "mysql": "^2.17.1",
     "qs": "^6.7.0",
     "script-loader": "^0.7.2",
