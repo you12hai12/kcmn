@@ -107,6 +107,9 @@
 					</el-col>
 				</el-row>
 			</el-tab-pane>
+			<el-tab-pane label="IView" name="iview">
+				<user></user>
+			</el-tab-pane>
 		</el-tabs>
 	</div>
 </template>
@@ -115,6 +118,7 @@
 import Charts from './Charts';
 import FCcharts from './FCcharts';
 import HighChart from './HighChart';
+import User from './User';
 const axios = require('axios');
 const qs = require('qs');
 
@@ -154,7 +158,8 @@ export default {
 	components: {
 		Charts,
 		FCcharts,
-		HighChart
+		HighChart,
+		User
 	},
 	created() {
 		var that = this;

@@ -8,6 +8,7 @@ import axios from 'axios'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import iView from 'iview'
+import 'iview/dist/styles/iview.css'
 import echarts from 'echarts'
 import VueFusionCharts from 'vue-fusioncharts'
 import FusionCharts from 'fusioncharts/core'
@@ -40,6 +41,7 @@ Highmaps(Highcharts);
 
 Vue.use(VueResource)
 Vue.use(ElementUI)
+Vue.use(iView)
 Vue.use(echarts)
 Vue.use(VueFusionCharts,FusionCharts,FusionTheme,FusionCandy,FusionCarbon,FusionFint,FusionGammel,FusionOcean,FusionZune,
         Pie2D,LineChart,Column3DChart,Column2DChart,Bar2DChart,AreaChart)
