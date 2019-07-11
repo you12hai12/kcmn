@@ -47,8 +47,65 @@
 			<el-tab-pane label="FusionCharts图形" name="fusioncharts"><f-ccharts></f-ccharts></el-tab-pane>
 			<el-tab-pane label="HighCharts图形" name="highcharts"><high-chart></high-chart></el-tab-pane>
 			<el-tab-pane label="Vue进度条" name="vues">
-				<el-progress type="circle" :percentage="percentage" :color="colors" :format="format" show-text="true"></el-progress>
+				<el-progress type="circle" :percentage="percentage" :color="colors" :format="format"></el-progress>
 				<el-progress :percentage="percentage" :color="colors" ></el-progress>
+			</el-tab-pane>
+			<el-tab-pane label="Vue步骤条" name="steps">
+				<el-row>
+					<el-col :span="24">
+						<el-steps :active="stepsActive" finish-status="success">
+							<el-step title="1"></el-step>
+							<el-step title="2"></el-step>
+							<el-step title="3"></el-step>
+							<el-step title="4"></el-step>
+						</el-steps>
+						<el-button @click="nextStep">下一步</el-button>
+					</el-col>
+					<el-col :span="24">
+						<el-steps :space="200" :active="1" finish-status="success">
+						  <el-step title="刚开始"></el-step>
+						  <el-step title="进行中"></el-step>
+						  <el-step title="已结束"></el-step>
+						</el-steps>
+					</el-col>
+					<el-col :span="24">
+						<el-steps :active="2" align-center>
+						  <el-step title="步骤1" description="星期一"></el-step>
+						  <el-step title="步骤2" description="星期二"></el-step>
+						  <el-step title="步骤3" description="星期三"></el-step>
+						  <el-step title="步骤4" description="星期四"></el-step>
+						</el-steps>
+					</el-col>
+					<el-col :span="24">
+						<el-steps :active="1">
+						  <el-step title="步骤 1" icon="el-icon-edit"></el-step>
+						  <el-step title="步骤 2" icon="el-icon-upload"></el-step>
+						  <el-step title="步骤 3" icon="el-icon-picture"></el-step>
+						</el-steps>
+					</el-col>
+					<el-col :span="24">
+						<div style="height:400px; text-align: center; vertical-align: middle; width: 100%;">
+							<el-steps direction="vertical" :active="1" align-center>
+								<el-step title="步骤 1"></el-step>
+								<el-step title="步骤 2"></el-step>
+								<el-step title="步骤 3" description="这是一段很长很长很长的描述性文字"></el-step>
+							</el-steps>
+						</div>
+					</el-col>
+					<el-col :span="24">
+						<el-steps :active="1" simple>
+						  <el-step title="步骤 1" icon="el-icon-edit"></el-step>
+						  <el-step title="步骤 2" icon="el-icon-upload"></el-step>
+						  <el-step title="步骤 3" icon="el-icon-picture"></el-step>
+						</el-steps>
+
+						<el-steps :active="1" finish-status="success" simple style="margin-top: 20px">
+						  <el-step title="步骤 1" ></el-step>
+						  <el-step title="步骤 2" ></el-step>
+						  <el-step title="步骤 3" ></el-step>
+						</el-steps>
+					</el-col>
+				</el-row>
 			</el-tab-pane>
 		</el-tabs>
 	</div>
@@ -90,7 +147,8 @@ export default {
 			    {color: '#1989fa', percentage: 80},
 				{color: '#363636', percentage: 90},
 			    {color: '#6f7ad3', percentage: 100}
-			]
+			],
+			stepsActive:0
 		};
 	},
 	components: {
@@ -261,6 +319,9 @@ export default {
 		format(percentage) {
 			let res = 0;
 			return Math.ceil(percentage/5) + 's'
+		},
+		nextStep() {
+			if (this.stepsActive++ > 4) this.stepsActive = 0;
 		}
 	}
 };
