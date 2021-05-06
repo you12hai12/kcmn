@@ -21,7 +21,7 @@
     "express": "^4.17.1",
     "file-saver": "^2.0.2",
     "fusioncharts": "^3.13.5-sr.1",
-    "highcharts": "^6.0.3",
+    "highcharts": "^9.0.0",
     "infiot-component-linechart": "0.0.10",
     "iview": "^3.4.2",
     "mysql": "^2.17.1",
